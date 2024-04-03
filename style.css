@@ -1,0 +1,310 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "montserrat", sans-serif;
+}
+::placeholder{
+    color: #6a6868;
+    font-weight: bold;
+}
+
+
+body{
+    /* #0a008b */
+    background-color: rgba(10,0,139,.8);
+    height: 100vh;
+}
+
+#add-task-container{
+
+    position:absolute;
+    top: 10vh;
+    left: 50%;
+    transform: translate(-50%,0);
+
+    width: 60%;
+    max-width: 400px;
+    height: 3.8rem;
+    
+    border-radius: 0.6rem;
+    display: flex;
+
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+    transition: all .2s ease;
+    border-bottom: 0.2rem solid black;
+    background-color: rgba(5, 231, 235, 0.4);
+
+
+
+}
+
+#add-task-container:hover{
+    top: 9vh;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    border-bottom: 0.3rem solid black;
+    background-color: rgba(5, 235, 181, 0.8);
+    background-color: rgba(5, 231, 235, 0.6);
+
+}
+#add-task-container:active{
+    top: 9vh;
+    background-color: rgba(5, 231, 235, 0.5);
+
+    border-bottom: 0.2rem solid black;
+}
+
+#input-task{
+    position: absolute;
+    left: 0.4rem;
+    top: 52%;
+    transform: translate(0, -50%);
+    font-weight: 500;
+    height: 2.8rem;
+    width: calc(100% - 2.8rem - 0.5rem - 0.4rem - 0.5rem);
+    background-color: rgba(206, 255, 195, 0.3);
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    border: none;
+    border-bottom: .2rem solid black;
+    margin-right: 1rem;
+    transition: all .2s ease;
+}
+
+#input-task:hover{
+    background-color: rgba(206, 255, 195, 0.8);
+    top: 48%;
+}
+#input-task:focus{
+    background-color: rgba(206, 255, 195, 1);
+    outline: none;
+    font-weight: bold;
+}
+#input-task:active{
+    top: 50%;
+    background-color: rgba(206, 255, 195, 0.8);
+}
+
+
+#add-task{
+    position:absolute;
+    top: 52%;
+
+    transform: translate(0, -50%);
+    right: 0.5rem;
+    height: 2.8rem;
+    width: 2.8rem;
+    font-size:1.4rem;
+    border: none;
+    border-bottom: 0.2rem solid black;
+    border-radius: 0.5rem;
+    color: aliceblue;
+    background-color: rgba(8, 21, 124, 0.6);
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+#add-task:hover{
+    top: 48%;
+    background-color: rgb(40, 195, 2);
+    color: aliceblue;
+
+}
+
+#add-task:focus{
+    outline: none;
+}
+#add-task:active{
+    top: 52%;
+    background-color: rgba(74, 217, 2, 1);
+}
+#input-task.entred{
+    top: 50%;
+    background-color: rgba(206, 255, 195, 0.8);
+}
+
+#add-task.entred{
+    top: 49%;
+    background-color: rgba(74, 217, 2, 1);
+}
+#task-container{
+    width: 70%;
+    max-width: 500px;
+    position: absolute;
+    top: 25vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: rgba(5, 231, 235, 0.3);
+
+    padding: 0rem 0.5rem;
+
+    border-radius: 1rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+    transition: all .2s ease;
+    border-bottom: 0.2rem solid black;
+    opacity: 0;
+}
+#task-container.active{
+    opacity: 1;
+   
+}
+
+#task-container.active:hover{
+    top: 24vh;
+    background-color: rgba(5, 231, 235, 0.4);
+    box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.2);
+    border-bottom: 0.4rem solid black;
+}
+#task-container.active:active{
+    top: 25vh;
+    background-color: rgba(5, 231, 235, 0.5);
+    box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.2);
+    border-bottom: 0.2rem solid black;
+}
+
+.task{
+    display: flex;
+    gap: 1rem;
+    border-bottom: 0.2rem solid black;
+    background-color: rgba(246, 255, 0, 0.6);
+    color: black;
+    border-radius: 0.7rem;
+    padding: 0.2rem 1rem;
+    min-height: 2rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin: 0.5rem 0;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    transition: all .1s ease;
+}
+.task:hover{
+    position: relative;
+    top: -0.1rem;
+    background-color: rgba(255, 221, 0, 0.9);
+
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+    border-bottom: 0.3rem solid black;
+}
+.task:active{
+    position: relative;
+    top: 0;
+    background-color: rgba(255, 191, 0, 0.9);
+
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    border-bottom: 0.2rem solid black;
+}
+
+.task-span{
+    flex:5;
+    padding: 0.6rem 0rem;
+}
+.task .buttons{
+    flex: 1.5;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.task .buttons .done, .remove, .return{
+    cursor: pointer;
+    width: 2.2rem;
+    height: 2.2rem;
+    vertical-align: middle;
+    border-radius: 0.4rem;
+    transition: all 0.1s ease;
+}
+.done{
+    padding-top: 0.3rem;
+    color: aliceblue;
+    background-color: rgba(36, 1, 179, 0.3);
+    border-bottom: 0.2rem solid black;
+}
+.done:hover{
+    position: relative;
+    top: -0.1rem;
+    background-color: rgba(37, 165, 5, 0.6);
+    border-bottom: 0.2rem solid black;
+    box-shadow: 0 0.3rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+.done:active{
+    position: relative;
+    top: 0.1rem;
+    background-color: rgba(51, 255, 0, 0.9);
+    border-bottom: 0.2rem solid black;
+    box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+.remove{
+    color: aliceblue;
+    background-color: rgba(12, 4, 116, 0.6);
+    font-size: 1.3rem;
+    padding-top: 0.4rem;
+    border-bottom: 0.2rem solid black;
+}
+.remove:hover{
+    position: relative;
+    top: -0.1rem;
+    background-color: rgb(204, 2, 2);
+    border-bottom: 0.2rem solid black;
+    box-shadow: 0 0.3rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+.remove:active{
+    position: relative;
+    top: 0.1rem;
+    background-color: rgb(204, 2, 2);
+    border-bottom: 0.2rem solid black;
+    box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+.return{
+    padding-top: 0.3rem;
+    color: aliceblue;
+    background-color: rgba(36, 1, 179, 0.3);
+    border-bottom: 0.2rem solid black;
+}
+.return:hover{
+    position: relative;
+    top: -0.1rem;
+    background-color: rgba(255, 221, 0, 0.9);
+    border-bottom: 0.2rem solid black;
+    box-shadow: 0 0.3rem 0.4rem rgba(0, 0, 0, 0.2);
+
+}
+.return:active{
+    position: relative;
+    top: 0.1rem;
+    background-color: rgba(255, 191, 0, 0.9);
+    border-bottom: 0.2rem solid black;
+    box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+.done-task span{
+    text-decoration: line-through;
+}
+
+.done-task{
+    color: #838080;
+    background-color: rgba(73, 71, 71, 0.4);
+    background-color: rgba(0, 204, 112, 0.526);
+    background-color: rgba(36, 50, 149, 0.8);
+
+}
+.done-task:hover{
+    background-color: rgba(122, 131, 199, 0.4);
+    color: black;
+}
+.done-task:active{
+    background-color: rgba(36, 50, 149, 1);
+
+}
+
+.hidden{
+    display: none;
+}
+
+
+#add-task.not-working{
+    top: 49%;
+    background-color: rgb(152, 152, 152);
+}
